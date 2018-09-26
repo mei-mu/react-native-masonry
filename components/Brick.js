@@ -19,6 +19,7 @@ export default function Brick (props) {
 
 // _getImageTag :: Image, Gutter -> ImageTag
 export function _getImageTag (props, gutter = 0) {
+	let customImageProps = props.customImageProps || {};
 	const imageProps = {
 		key: props.uri,
 		source: {
@@ -29,8 +30,8 @@ export function _getImageTag (props, gutter = 0) {
 		},
 		resizeMethod: 'auto',
 		style: {
-            width: props.width - (props.imageWidthOffset || 0),
-            height: props.height - (props.imageHeightOffset || 0),
+            width: props.width - (customImageProps.imageWidthOffset || 0),
+            height: props.height - (customImageProps.imageHeightOffset || 0),
 			marginTop: gutter,
 			...props.imageContainerStyle
 		}
