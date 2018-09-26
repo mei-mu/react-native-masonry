@@ -29,8 +29,8 @@ export function _getImageTag (props, gutter = 0) {
 		},
 		resizeMethod: 'auto',
 		style: {
-			width: props.width,
-			height: props.height,
+            width: props.width - props.imageWidthOffset || 0,
+            height: props.height - props.imageHeightOffset || 0,
 			marginTop: gutter,
 			...props.imageContainerStyle
 		}
