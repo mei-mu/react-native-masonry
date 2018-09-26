@@ -10,5 +10,11 @@ export const resolveImage = (data) => {
 			width,
 			height
 		}
-	}), (err) => reject(err)));
+	}), (err) => resolve({
+        ...data,
+        dimensions: {
+            width: 0,
+            height: 0
+        }
+	})));
 };
